@@ -95,7 +95,7 @@
       </f7-row>
       <f7-row tag="p">
         <f7-button class="col" big fill raised color="red">Big Red</f7-button>
-        <f7-button class="col" big fill raised color="green">Big Green</f7-button>
+        <f7-button class="col" big fill raised color="green" @click="a">Big Green</f7-button>
       </f7-row>
     </f7-block>
   </f7-page>

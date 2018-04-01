@@ -16,21 +16,20 @@
     </f7-panel>
 
     <!-- Main View -->
-    <f7-view id="main-view" url="/" main></f7-view>
+    <f7-view id="main-view" url="/" main class="theme-green">
+        <f7-navbar>
+          <f7-nav-left>
+            <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
+          </f7-nav-left>
+          <f7-nav-title>CA El Faro</f7-nav-title>
+          <f7-nav-right>
+            <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="right"></f7-link>
+          </f7-nav-right>
+        </f7-navbar>
+    </f7-view>
 
-    <!-- Popup -->
-    <f7-popup id="popup">
-      <f7-view>
-        <f7-page>
-          <f7-navbar title="Popup">
-            <f7-nav-right>
-              <f7-link popup-close>Close</f7-link>
-            </f7-nav-right>
-          </f7-navbar>
-          <f7-block>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, architecto. Cupiditate laudantium rem nesciunt numquam, ipsam. Voluptates omnis, a inventore atque ratione aliquam. Omnis iusto nemo quos ullam obcaecati, quod.</f7-block>
-        </f7-page>
-      </f7-view>
-    </f7-popup>
+
+
 
     <!-- Login Screen -->
     <f7-login-screen id="login-screen">
@@ -48,7 +47,7 @@
             </f7-list-item>
           </f7-list>
           <f7-list>
-            <f7-list-button title="Sign In" login-screen-close></f7-list-button>
+            <f7-list-button title="Sign In" @click="login"></f7-list-button>
             <f7-block-footer>
               <p>Click Sign In to close Login Screen</p>
             </f7-block-footer>
@@ -61,5 +60,12 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    login() {
+        console.log('login');
+    }
+  }
+
+}
 </script>

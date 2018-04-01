@@ -1,7 +1,7 @@
 {
-  "name": "framework7-template-vue-webpack",
+  "name": "CAElFaroApp",
   "version": "2.0.0",
-  "description": "Framework7 Vue Webpack starter app template",
+  "description": "App to CA El Faro",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
@@ -9,27 +9,15 @@
     "copy-fonts": "cpy node_modules/framework7-icons/fonts/*.* src/fonts && cpy node_modules/material-design-icons/iconfont/*.{eot,ttf,woff,woff2} src/fonts",
     "postinstall": "npm run copy-fonts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/framework7io/framework7-template-vue-webpack.git"
-  },
   "keywords": [
-    "ios",
-    "webpack",
-    "framework7",
-    "vue",
-    "vuejs",
-    "material",
-    "mobile",
-    "app",
-    "f7"
+    "caelfaro"
   ],
-  "author": "Vladimir Kharlampidi",
+  "author": "Cesar Garcia",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/framework7io/framework7-template-vue-webpack/issues"
+    "url": ""
   },
-  "homepage": "http://framework7.io/vue/",
+  "homepage": "http://atletismoelfaroalfas.es",
   "dependencies": {
     "framework7": "^2.0.7",
     "framework7-icons": "^0.8.9",
