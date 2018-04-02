@@ -1,4 +1,5 @@
 import HomePage from './pages/home.vue';
+import RankingPage from './pages/ranking.vue';
 import AboutPage from './pages/about.vue';
 import FormPage from './pages/form.vue';
 import DynamicRoutePage from './pages/dynamic-route.vue';
@@ -19,6 +20,10 @@ export default [
   {
     path: '/panel-right/',
     component: PanelRightPage,
+  },
+  {
+    path: '/ranking/',
+    component: RankingPage,
   },
   {
     path: '/about/',

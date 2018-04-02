@@ -1,6 +1,8 @@
 // Import Vue
 import Vue from 'vue';
 
+import axios from 'axios'
+
 // Import F7
 import Framework7 from 'framework7/dist/framework7.esm.bundle.js';
 

@@ -1,6 +1,6 @@
 <template>
   <!-- App -->
-  <div id="app">
+  <div id="app" class="color-theme-green">
 
     <!-- Statusbar -->
     <f7-statusbar></f7-statusbar>
@@ -16,7 +16,7 @@
     </f7-panel>
 
     <!-- Main View -->
-    <f7-view id="main-view" url="/" main class="theme-green">
+    <f7-view id="main-view" url="/ranking/" main>
         <f7-navbar>
           <f7-nav-left>
             <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>

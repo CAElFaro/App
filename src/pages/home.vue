@@ -41,5 +41,14 @@
   </f7-page>
 </template>
 <script>
-export default {}
+import axios from 'axios'
+
+export default {
+    mounted: function() {
+        console.log(this.$parent);
+        axios.get('https://intranet.atletismoelfaroalfas.es/api/members').then((response) => {
+            console.log(response.data)
+        })
+    }
+}
 </script>

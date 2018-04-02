@@ -11,8 +11,9 @@
     </f7-list>
     <f7-block-title>Load page in main view</f7-block-title>
     <f7-list>
-      <f7-list-item link="/about/" title="About" view="#main-view" panel-close></f7-list-item>
-      <f7-list-item link="/form/" title="Forma" view="#main-view" panel-close></f7-list-item>
+        <f7-list-item link="/ranking/" title="Ranking" view="#main-view" panel-close></f7-list-item>
+        <f7-list-item link="/about/" title="About" view="#main-view" panel-close></f7-list-item>
+        <f7-list-item link="/form/" title="Forma" view="#main-view" panel-close></f7-list-item>
     </f7-list>
   </f7-page>
 </template>
