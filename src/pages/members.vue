@@ -6,7 +6,7 @@
           <f7-nav-left>
             <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
           </f7-nav-left>
-          <f7-nav-title>CAElFaro: Socios</f7-nav-title>
+          <f7-nav-title>Socios</f7-nav-title>
           <f7-nav-right>
             <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="right"></f7-link>
           </f7-nav-right>
@@ -62,7 +62,6 @@ export default {
 
     methods: {
         onF7Ready(f7) {
-            this.temp = this.temp_current;
             this.reload();
         },
         reload() {

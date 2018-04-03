@@ -1,9 +1,11 @@
 import HomePage from './pages/home.vue';
 import RankingPage from './pages/ranking.vue';
-import AboutPage from './pages/about.vue';
-import FormPage from './pages/form.vue';
 import MembersPage from './pages/members.vue';
 import MemberPage from './pages/member.vue';
+import RacersPage from './pages/racers.vue';
+
+import AboutPage from './pages/about.vue';
+import FormPage from './pages/form.vue';
 import NotFoundPage from './pages/not-found.vue';
 
 import PanelLeftPage from './pages/panel-left.vue';
@@ -41,6 +43,10 @@ export default [
   {
     path: '/member/:memberId/',
     component: MemberPage,
+  },
+  {
+    path: '/racers/',
+    component: RacersPage,
   },
   {
     path: '(.*)',

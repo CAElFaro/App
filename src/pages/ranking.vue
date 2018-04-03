@@ -9,22 +9,25 @@
           <f7-nav-left>
             <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
           </f7-nav-left>
-          <f7-nav-title>CAElFaro: Ranking</f7-nav-title>
+          <f7-nav-title>Ranking {{temp}}/{{temp+1}}</f7-nav-title>
           <f7-nav-right>
-            <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="right"></f7-link>
+              <f7-link>
+                  <f7-icon f7="bell_fill">
+                      <span class="badge color-red">1</span>
+                  </f7-icon>
+              </f7-link>
+
           </f7-nav-right>
-          <f7-subnavbar color-theme="gray">
-              <f7-nav-left>
-                <f7-link  v-if="temp > 2012" icon-if-ios="f7:left" icon-if-md="material:chevron_left" @click="back()"></f7-link>
-              </f7-nav-left>
-              <f7-nav-title>Temp: {{temp}} /{{temp+1}}</f7-nav-title>
-              <f7-nav-right>
-                <f7-link v-if="temp < temp_current" icon-if-ios="f7:right" icon-if-md="material:chevron_right" @click="next()"></f7-link>
-              </f7-nav-right>
-          </f7-subnavbar>
         </f7-navbar>
 
+        <f7-toolbar tabbar scrollable bottom-md labels class="toolbar fab-morph-target">
+            <f7-link  v-if="temp > 2012" icon-if-ios="f7:left" icon-if-md="material:chevron_left" @click="back()" class="fab-close"></f7-link>
+            <f7-link v-if="temp < temp_current" icon-if-ios="f7:right" icon-if-md="material:chevron_right" @click="next()" class="fab-close"></f7-link>
+        </f7-toolbar>
 
+        <f7-fab color="blue" morph-to=".toolbar">
+            <f7-icon f7="info"></f7-icon>
+        </f7-fab>
 
 
         <f7-list media-list>
