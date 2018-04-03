@@ -1,20 +1,44 @@
 <template>
-  <f7-page ptr @ptr:refresh="reload()" :hide-navbar-on-scroll="true">
-    <f7-navbar back-link="Back">
+  <f7-page ptr @ptr:refresh="reload()" :hide-navbar-on-scroll="true" :no-navbar="true">
+    <f7-navbar back-link="Volver">
         <f7-nav-title>
-            <img :src="data.avatar" class="message-avatar" style="width: 48px;height: 48px;">
+            <img :src="data.avatar" class="message-avatar" style="width: 24px;height: 24px;">
             {{data.fullname}}
         </f7-nav-title>
     </f7-navbar>
 
-    <f7-block strong>
-        <img :src="data.avatar" class="message-avatar" style="width: 48px;height: 48px;">
-      <ul>
-        <li><b>Nombre:</b> {{data.fullname}}</li>
-        <li><b>Miembro desde:</b> {{data.member_at}}</li>
-        <li><b>Hash:</b> {{$f7route.hash}}</li>
-      </ul>
-    </f7-block>
+
+
+<f7-tabs swipeable>
+  <f7-tab id="profile" tab-active>
+      <f7-card>
+          <f7-card-header>
+              <img :src="data.avatar" style="width: 100%;" class="lazy lazy-fade-in">
+          </f7-card-header>
+          <f7-card-content>
+              <ul v-if="data.stats.total">
+                  <li><b>Nombre:</b> {{data.fullname}}</li>
+                  <li><b>Miembro desde:</b> {{data.member_at}}</li>
+                  <li><b>Puntos totales obtenidos:</b> {{data.stats.total.points}}</li>
+                  <li v-if="data.stats.total.podiums > 0"><b>Podiums logrados:</b> {{data.stats.total.podiums}}</li>
+                  <li><b>Carreras realizadas:</b> {{data.stats.total.racers_count}}</li>
+              </ul>
+          </f7-card-content>
+          <f7-card-footer>
+          </f7-card-footer>
+      </f7-card>
+  </f7-tab>
+
+  <f7-tab id="racers">
+
+  </f7-tab>
+</f7-tabs>
+
+<f7-toolbar tabbar>
+  <f7-link icon="icon-1" text="Perfil" tab-link="#profile"></f7-link>
+  <f7-link icon="icon-2" text="Competiciones" tab-link="#racers"></f7-link>
+</f7-toolbar>
+
   </f7-page>
 </template>
 
@@ -26,19 +50,19 @@ export default {
         return {
             data: {
                 id: 0,
-                fullname: ''
+                fullname: '',
+                stats: {
+                    tota: {},
+                },
             }
         }
     },
     methods: {
         onF7Ready(f7) {
-            console.log(this.$f7route.params.memberId);
             this.data.id = this.$f7route.params.memberId;
-
             this.reload();
         },
         reload() {
-            console.log('reload');
             axios.get('https://intranet.atletismoelfaroalfas.es/api/member/' + this.data.id)
             .then((response) => {
                 this.data = response.data.data;

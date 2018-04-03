@@ -1,19 +1,30 @@
 <template>
 
 
-    <f7-page ptr @ptr:refresh="reload()" :hide-navbar-on-scroll="true">
+
+    <f7-page ptr @ptr:refresh="reload()" :hide-bars-on-scroll="true">
 
 
-
-        <f7-navbar >
-            <f7-nav-left  v-if="temp > 2012">
-              <f7-link icon-if-ios="f7:left" icon-if-md="material:chevron_left" @click="back()"></f7-link>
-            </f7-nav-left>
-            <f7-nav-title>{{temp + '/' + (temp+1)}}</f7-nav-title>
-            <f7-nav-right v-if="temp < temp_current">
-              <f7-link icon-if-ios="f7:right" icon-if-md="material:chevron_right" @click="next()"></f7-link>
-            </f7-nav-right>
+        <f7-navbar color-theme="green">
+          <f7-nav-left>
+            <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
+          </f7-nav-left>
+          <f7-nav-title>CAElFaro: Ranking</f7-nav-title>
+          <f7-nav-right>
+            <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="right"></f7-link>
+          </f7-nav-right>
+          <f7-subnavbar color-theme="gray">
+              <f7-nav-left>
+                <f7-link  v-if="temp > 2012" icon-if-ios="f7:left" icon-if-md="material:chevron_left" @click="back()"></f7-link>
+              </f7-nav-left>
+              <f7-nav-title>Temp: {{temp}} /{{temp+1}}</f7-nav-title>
+              <f7-nav-right>
+                <f7-link v-if="temp < temp_current" icon-if-ios="f7:right" icon-if-md="material:chevron_right" @click="next()"></f7-link>
+              </f7-nav-right>
+          </f7-subnavbar>
         </f7-navbar>
+
+
 
 
         <f7-list media-list>
@@ -22,7 +33,7 @@
             :link="'/member/' + e.id + '/'"
             :title="e.fullname"
             >
-              <img :src="e.avatar" class="message-avatar" slot="media" style="width: 48px;height: 48px;">
+              <img :src="e.avatar" class="message-avatar lazy lazy-fade-in" slot="media" style="width: 48px;height: 48px;">
               <div slot="root-start"></div>
               <div slot="root"></div>
               <div slot="content-start"></div>
