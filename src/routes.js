@@ -2,7 +2,8 @@ import HomePage from './pages/home.vue';
 import RankingPage from './pages/ranking.vue';
 import AboutPage from './pages/about.vue';
 import FormPage from './pages/form.vue';
-import DynamicRoutePage from './pages/dynamic-route.vue';
+import MembersPage from './pages/members.vue';
+import MemberPage from './pages/member.vue';
 import NotFoundPage from './pages/not-found.vue';
 
 import PanelLeftPage from './pages/panel-left.vue';
@@ -34,8 +35,12 @@ export default [
     component: FormPage,
   },
   {
-    path: '/dynamic-route/blog/:blogId/post/:postId/',
-    component: DynamicRoutePage,
+    path: '/members/',
+    component: MembersPage,
+  },
+  {
+    path: '/member/:memberId/',
+    component: MemberPage,
   },
   {
     path: '(.*)',
