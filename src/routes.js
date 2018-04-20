@@ -3,6 +3,7 @@ import RankingPage from './pages/ranking.vue';
 import MembersPage from './pages/members.vue';
 import MemberPage from './pages/member.vue';
 import RacersPage from './pages/racers.vue';
+import RacerPage from './pages/racer.vue';
 
 import AboutPage from './pages/about.vue';
 import FormPage from './pages/form.vue';
@@ -47,6 +48,10 @@ export default [
   {
     path: '/racers/',
     component: RacersPage,
+  },
+  {
+    path: '/racer/:racerId/',
+    component: RacerPage,
   },
   {
     path: '(.*)',

@@ -19,7 +19,7 @@
                     :key="k"
                     :link="'/racer/' + e.id + '/'"
                     :title="e.name"
-                    :subtitle="' ' + e.date"
+                    :subtitle="' ' + e.date_humman"
                     >
                     <div slot="root-start"></div>
                     <div slot="root"></div>
@@ -71,7 +71,7 @@ export default {
         reload() {
             this.page++;
             if (this.isInfinite) {
-                axios.get('https://caelfaro.dev/api/racers?page=' + this.page)
+                axios.get('https://intranet.atletismoelfaroalfas.es/api/racers?page=' + this.page)
                 .then((response) => {
                     this.isInfinite = response.data.links.next !== null;
                     response.data.data.forEach(function(e) {
